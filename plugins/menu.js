@@ -19,9 +19,9 @@ module.exports = {
             let tags = {}
             const defaultMenu = {
                before: `${message}\n`.trimStart(),
-               header: '  乂  *%category*\n\n┌─',
-               body: '│  ◦  %cmd %isUse %isPremium',
-               footer: '└─\n',
+               header: '  ä¹‚  *%category*\n\nâ”Œâ”€',
+               body: 'â”‚  â—¦  %cmd %isUse %isPremium',
+               footer: 'â””â”€\n',
                after: `${global.footer}`,
             }
             let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
@@ -53,8 +53,8 @@ module.exports = {
                         return menu.help.map(help => {
                            return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                               .replace(/%isUse/g, menu.use ? '*' + menu.use + '*' : ' ')
-                              .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
-                              .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '')
+                              .replace(/%islimit/g, menu.limit ? 'â“' : '')
+                              .replace(/%isPremium/g, menu.premium ? 'â“…' : '')
                               .trim()
                         }).join('\n')
                      }), footer
@@ -73,9 +73,9 @@ module.exports = {
          } else if (style === 2) {
             const defaultMenu = {
                before: ``.trimStart(),
-               header: '┌─',
-               body: '│  ◦  %cmd %isUse %isPremium',
-               footer: '└─\n',
+               header: 'â”Œâ”€',
+               body: 'â”‚  â—¦  %cmd %isUse %isPremium',
+               footer: 'â””â”€\n',
                after: ``,
             }
 
@@ -93,11 +93,14 @@ module.exports = {
 
             let tags
             let teks = `${args[0]}`.toLowerCase()
-            let arrayMenu = ['admin', 'converter', 'downloader', 'fun', 'game', 'group', 'miscs', 'user', 'tools', 'voice']
+            let arrayMenu = ['admin', 'converter', 'downloader', 'fun', 'game', 'group', 'miscs', 'user', 'tools', 'voice','owner']
             if (!arrayMenu.includes(teks)) teks = '404'
 
             if (teks == 'admin') tags = {
                'admin': 'admin'
+            }
+            if (teks == 'owner') tags = {
+               'owner': 'owner'
             }
             if (teks == 'converter') tags = {
                'converter': 'conveter'
@@ -131,11 +134,11 @@ module.exports = {
                let caption = `${message}\n\n`
                caption += arrayMenu.sort((a, b) => a.localeCompare(b)).map((v, i) => {
                   if (i == 0) {
-                     return `┌  ◦  ${_p + command} ${v}`
+                     return `â”Œ  â—¦  ${_p + command} ${v}`
                   } else if (i == arrayMenu.sort((a, b) => a.localeCompare(b)).length - 1) {
-                     return `└  ◦  ${_p + command} ${v}`
+                     return `â””  â—¦  ${_p + command} ${v}`
                   } else {
-                     return `│  ◦  ${_p + command} ${v}`
+                     return `â”‚  â—¦  ${_p + command} ${v}`
                   }
                }).join('\n')
                caption += '\n\n' + global.footer
@@ -169,8 +172,8 @@ module.exports = {
                         return menu.help.map(help => {
                            return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                               .replace(/%isUse/g, menu.use ? '*' + menu.use + '*' : ' ')
-                              .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
-                              .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '').trim()
+                              .replace(/%islimit/g, menu.limit ? 'â“' : '')
+                              .replace(/%isPremium/g, menu.premium ? 'â“…' : '').trim()
                         }).join('\n')
                      }), footer
                   ].join('\n')
@@ -185,9 +188,9 @@ module.exports = {
          } else if (style === 3) {
             const defaultMenu = {
                before: ``.trimStart(),
-               header: '┌─',
-               body: '│  ◦  %cmd %isUse %isPremium',
-               footer: '└─\n',
+               header: 'â”Œâ”€',
+               body: 'â”‚  â—¦  %cmd %isUse %isPremium',
+               footer: 'â””â”€\n',
                after: ``,
             }
 
@@ -205,11 +208,14 @@ module.exports = {
 
             let tags
             let teks = `${args[0]}`.toLowerCase()
-            let arrayMenu = ['admin', 'converter', 'downloader', 'fun', 'game', 'group', 'miscs', 'user', 'tools', 'voice']
+            let arrayMenu = ['admin', 'converter', 'downloader', 'fun', 'game', 'group', 'miscs', 'user', 'tools', 'voice','owner']
             if (!arrayMenu.includes(teks)) teks = '404'
 
             if (teks == 'admin') tags = {
                'admin': 'admin'
+            }
+            if (teks == 'owner') tags = {
+               'owner': 'owner'
             }
             if (teks == 'converter') tags = {
                'converter': 'conveter'
@@ -240,14 +246,14 @@ module.exports = {
             }
 
             const label = {
-               highlight_label: 'Many Used'
+               highlight_label: 'Menu spesial'
             }
             let sections = []
             arrayMenu.sort((a, b) => a.localeCompare(b)).map((v, i) => sections.push({
                ...(/download|conver|util/.test(v) ? label : {}),
                rows: [{
                   title: Func.ucword(v),
-                  description: `There are commands`,
+                  description: `There are commands XerorKonoha`,
                   id: `${_p + command} ${v}`
                }]
             }))
@@ -290,8 +296,8 @@ module.exports = {
                         return menu.help.map(help => {
                            return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                               .replace(/%isUse/g, menu.use ? '*' + menu.use + '*' : ' ')
-                              .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
-                              .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '').trim()
+                              .replace(/%islimit/g, menu.limit ? 'â“' : '')
+                              .replace(/%isPremium/g, menu.premium ? 'â“…' : '').trim()
                         }).join('\n')
                      }), footer
                   ].join('\n')
