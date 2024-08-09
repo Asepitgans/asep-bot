@@ -19,9 +19,9 @@ module.exports = {
             let tags = {}
             const defaultMenu = {
                before: `${message}\n`.trimStart(),
-               header: '  ä¹‚  *%category*\n\nâ”Œâ”€',
-               body: 'â”‚  â—¦  %cmd %isUse %isPremium',
-               footer: 'â””â”€\n',
+               header: '  乂  *%category*\n\n┌─',
+               body: '│  ◦  %cmd %isUse %isPremium',
+               footer: '└─\n',
                after: `${global.footer}`,
             }
             let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
@@ -53,8 +53,8 @@ module.exports = {
                         return menu.help.map(help => {
                            return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                               .replace(/%isUse/g, menu.use ? '*' + menu.use + '*' : ' ')
-                              .replace(/%islimit/g, menu.limit ? 'â“' : '')
-                              .replace(/%isPremium/g, menu.premium ? 'â“…' : '')
+                              .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
+                              .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '')
                               .trim()
                         }).join('\n')
                      }), footer
@@ -73,9 +73,9 @@ module.exports = {
          } else if (style === 2) {
             const defaultMenu = {
                before: ``.trimStart(),
-               header: 'â”Œâ”€',
-               body: 'â”‚  â—¦  %cmd %isUse %isPremium',
-               footer: 'â””â”€\n',
+               header: '┌─',
+               body: '│  ◦  %cmd %isUse %isPremium',
+               footer: '└─\n',
                after: ``,
             }
 
@@ -134,11 +134,11 @@ module.exports = {
                let caption = `${message}\n\n`
                caption += arrayMenu.sort((a, b) => a.localeCompare(b)).map((v, i) => {
                   if (i == 0) {
-                     return `â”Œ  â—¦  ${_p + command} ${v}`
+                     return `┌  ◦  ${_p + command} ${v}`
                   } else if (i == arrayMenu.sort((a, b) => a.localeCompare(b)).length - 1) {
-                     return `â””  â—¦  ${_p + command} ${v}`
+                     return `└  ◦  ${_p + command} ${v}`
                   } else {
-                     return `â”‚  â—¦  ${_p + command} ${v}`
+                     return `│  ◦  ${_p + command} ${v}`
                   }
                }).join('\n')
                caption += '\n\n' + global.footer
@@ -172,8 +172,8 @@ module.exports = {
                         return menu.help.map(help => {
                            return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                               .replace(/%isUse/g, menu.use ? '*' + menu.use + '*' : ' ')
-                              .replace(/%islimit/g, menu.limit ? 'â“' : '')
-                              .replace(/%isPremium/g, menu.premium ? 'â“…' : '').trim()
+                              .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
+                              .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '').trim()
                         }).join('\n')
                      }), footer
                   ].join('\n')
@@ -188,9 +188,9 @@ module.exports = {
          } else if (style === 3) {
             const defaultMenu = {
                before: ``.trimStart(),
-               header: 'â”Œâ”€',
-               body: 'â”‚  â—¦  %cmd %isUse %isPremium',
-               footer: 'â””â”€\n',
+               header: '┌─',
+               body: '│  ◦  %cmd %isUse %isPremium',
+               footer: '└─\n',
                after: ``,
             }
 
@@ -246,14 +246,14 @@ module.exports = {
             }
 
             const label = {
-               highlight_label: 'Menu spesial'
+               highlight_label: 'Many Used'
             }
             let sections = []
             arrayMenu.sort((a, b) => a.localeCompare(b)).map((v, i) => sections.push({
                ...(/download|conver|util/.test(v) ? label : {}),
                rows: [{
                   title: Func.ucword(v),
-                  description: `There are commands XerorKonoha`,
+                  description: `There are commands`,
                   id: `${_p + command} ${v}`
                }]
             }))
@@ -296,8 +296,8 @@ module.exports = {
                         return menu.help.map(help => {
                            return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                               .replace(/%isUse/g, menu.use ? '*' + menu.use + '*' : ' ')
-                              .replace(/%islimit/g, menu.limit ? 'â“' : '')
-                              .replace(/%isPremium/g, menu.premium ? 'â“…' : '').trim()
+                              .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
+                              .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '').trim()
                         }).join('\n')
                      }), footer
                   ].join('\n')
