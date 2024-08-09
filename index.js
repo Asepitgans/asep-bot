@@ -1,12 +1,12 @@
 const cluster = require('cluster'), path = require('path'), fs = require('fs'), package = require('./package.json'), CFonts = require('cfonts'), Readline = require('readline'), yargs = require('yargs/yargs')
 const readline = Readline.createInterface(process.stdin, process.stdout)
 
-CFonts.say(`MOON-BOT`, {
+CFonts.say(`ASEP-BOT`, {
    font: 'tiny',
    align: 'center',
    colors: ['system']
 })
-CFonts.say(`Github : https://github.com/rifnd/moon-bot`, {
+CFonts.say(`Website : https://unitedcyberteam.com`, {
    font: 'console',
    align: 'center',
    colors: ['system']
