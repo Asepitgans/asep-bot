@@ -8,9 +8,9 @@ module.exports = {
          number: env.owner,
          about: 'Owner & Creator'
       }], m, {
-         org: 'Moon Support',
-         website: 'https://api.alyachan.dev',
-         email: 'contact@moonx.my.id'
+         org: 'Asep Support',
+         website: 'https://unitedcyberteam.com',
+         email: 'contact@unitedcyberteam.com'
       })
    },
    help: ['owner'],
